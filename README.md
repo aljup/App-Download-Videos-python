@@ -1,25 +1,25 @@
 # Cloud File Manager
 
-نظام إدارة الملفات السحابية مع خاصية المشاركة الآمنة للملفات.
+A cloud-based file management system with secure file-sharing capabilities.
 
-## المميزات
+## Features
 
-- رفع وتنزيل الملفات
-- تنظيم الملفات في مجلدات
-- مشاركة الملفات مع الآخرين
-- معاينة الصور والفيديو والصوت مباشرة
-- إدارة صلاحيات المستخدمين
-- تتبع إحصائيات المشاركة
-- واجهة مستخدم سهلة الاستخدام
+- Upload and download files
+- Organize files into folders
+- Share files securely with others
+- Preview images, videos, and audio files
+- Manage user permissions
+- Track sharing statistics
+- User-friendly interface
 
-## متطلبات النظام
+## System Requirements
 
-- PHP 7.4 أو أحدث
-- MySQL 5.7 أو أحدث
-- خادم ويب (Apache/Nginx)
-- تفعيل PDO PHP Extension
-- تفعيل FileInfo PHP Extension
+- PHP 7.4 or later
+- MySQL 5.7 or later
+- Web server (Apache/Nginx)
+- Enabled PDO PHP Extension
+- Enabled FileInfo PHP Extension
 
-## التثبيت
+## Installation
 
-1. قم بإنشاء قاعدة البيانات وتنفيذ ملف `database.sql`:
+1. Create the database and execute the `database.sql` file.
