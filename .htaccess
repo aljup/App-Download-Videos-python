@@ -1,0 +1,26 @@
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Short URL rewrite for shared files
+RewriteCond %{REQUEST_URI} ^/s/([A-Z0-9]+)/?
+RewriteRule ^s/([A-Z0-9]+)/?$ /s/index.php?code=$1 [QSA,L]
+
+# تحويل مسار التحميل إلى الرابط المختصر
+RewriteCond %{QUERY_STRING} ^code=([A-Z0-9]+)$
+RewriteRule ^s/download\.php$ /s/?code=%1 [R=301,L]
+
+# Protect sensitive directories
+RewriteRule ^includes/ - [F,L]
+
+# Block direct access to uploads except through share page
+RewriteCond %{REQUEST_URI} ^/uploads/
+RewriteCond %{HTTP_REFERER} !^https?://%{HTTP_HOST}/s/
+RewriteRule .* - [F,L]
+
+# Default rule
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php [QSA,L]

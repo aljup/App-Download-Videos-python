@@ -1,0 +1,14 @@
+# السماح بالوصول إلى index.php في مجلد s
+<Files "index.php">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+# تمكين الوصول للملفات من خلال صفحة المشاركة
+RewriteEngine On
+RewriteBase /s/
+
+# تحويل كل الطلبات إلى index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?code=$1 [QSA,L]

@@ -1,0 +1,14 @@
+# Prevent direct listing of files
+Options -Indexes
+
+# Allow specific file types to be downloaded
+<FilesMatch "\.(jpg|jpeg|png|gif|pdf|doc|docx|xls|xlsx|zip|rar|txt|mp3|mp4|mov)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Deny access to PHP files
+<FilesMatch "\.php$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
