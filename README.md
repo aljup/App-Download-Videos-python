@@ -17,7 +17,7 @@ pip install -r requirements.txt
 ## Usage
 To download a video, run:
 ```bash
-python download.py <video_url>
+python video_downloader.py
 ```
 
 ## Contributing
